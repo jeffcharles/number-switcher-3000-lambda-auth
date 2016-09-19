@@ -1,0 +1,18 @@
+{
+  "name": "number-switcher-3000-auth-lambda",
+  "version": "1.0.0",
+  "description": "A lambda function for managing authentication for the number switcher",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "node-lambda": "node-lambda",
+    "test": "./deploy-and-test.js"
+  },
+  "author": "Jeffrey Charles <jeffreycharles@beyondtechnicallycorrect.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.6.3",
+    "eslint": "^3.4.0",
+    "node-lambda": "^0.8.9"
+  }
+}
