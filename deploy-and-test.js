@@ -59,8 +59,8 @@ new Promise(resolve => {
     })
   )
   .then(data => {
-    console.log(data);
     if (data.FunctionError) {
+      console.log(data);
       console.log(convertBase64ToAscii(data.LogResult));
       throw new Error('Unexpected error with correct token');
     }
@@ -71,13 +71,14 @@ new Promise(resolve => {
     });
   })
   .then(data => {
-    console.log(data);
     if (data.FunctionError !== 'Handled') {
       throw new Error('Incorrect token should have error');
     }
 
     const deserializedPayload = JSON.parse(data.Payload);
     if (deserializedPayload.errorMessage !== 'Incorrect token') {
+      console.log(data);
+      console.log(convertBase64ToAscii(data.logResult));
       throw new Error('Wrong error with incorrect token');
     }
 
@@ -87,13 +88,15 @@ new Promise(resolve => {
     });
   })
   .then(data => {
-    console.log(data);
     if (data.FunctionError !== 'Handled') {
+      console.log(data);
       throw new Error('Wrong parameter name should have error');
     }
 
     const deserializedPayload = JSON.parse(data.Payload);
     if (deserializedPayload.errorMessage !== 'Missing `loginToken` parameter') {
+      console.log(data);
+      console.log(convertBase64ToAscii(data.LogResult));
       throw new Error('Wrong error with incorrect parameter name');
     }
   })
