@@ -5,10 +5,10 @@ test:
   override:
     - npm run lint
     - npm test
-# deployment:
-#   prod:
-#     owner: jeffcharles
-#     branch: master
-#     commands:
-#       - printf "LOGIN_TOKEN=$LOGIN_TOKEN\nROLE_ARN=arn:aws:iam::762636538502:role/number-switcher-3000-ui_prod" > deploy.env
-#       - ./deploy-and-test.js prod $LOGIN_TOKEN
+deployment:
+  prod:
+    owner: jeffcharles
+    branch: master
+    commands:
+      - printf "LOGIN_TOKEN=$LOGIN_TOKEN\nROLE_ARN=arn:aws:iam::762636538502:role/number-switcher-3000-ui_prod" > deploy.env
+      - ./deploy-and-test.js prod $LOGIN_TOKEN
